@@ -46,7 +46,7 @@ class Solution:
         if x >= 0:
             result = int(newS)
         else:
-            result = int(float(newS[:-1])) * -1
+            result = int(newS[:-1]) * -1
 
         if result.bit_length() <= 31:
             return result
@@ -54,6 +54,3 @@ class Solution:
             return 0
 
 print(Solution().reverse2(-123))
-
-
-print(int("23345344333343334-"[:-1]))

@@ -4,15 +4,13 @@
 
 class Solution:
     def isPalindrome(self, x: int) -> bool:
-        if x < 0: return False
-        if x < 10: return True
-        tempV = x
-        newV = 0
-        while tempV != 0:
-            newV = newV * 10 + tempV % 10
-            tempV = int(tempV/10)
-        if newV == x: return True
-        return False
+        if x == 0: return True
+        if x < 0 or x % 10 == 0: return False
+        newX = 0
+        while x > newX:
+            newX = newX * 10 + x % 10
+            x = int(x/10)
+        return x == newX or x == int(newX / 10)
 
     def isPalindrome2(self, x: int) -> bool:
         if x < 0: return False
